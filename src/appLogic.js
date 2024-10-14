@@ -1,7 +1,9 @@
-let projects = [];
+const projects = [];
 
 class Project {
+    
     constructor (title) {
+        
         this.title = title;
         this.tasks = [];
         projects.push(this);

@@ -6,4 +6,4 @@ import "./DOMstuff.js";
 
 // tests
 
-console.log(projects);
+

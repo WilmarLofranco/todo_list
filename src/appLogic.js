@@ -1,11 +1,10 @@
+// appLogic.js
 const projects = [];
 
 class Project {
-    
-    constructor (title) {
-        
+    constructor(title) {
         this.title = title;
-        this.tasks = [];
+        this.tasks = [];  // Initialize tasks array for each project
         projects.push(this);
     }
     editProject(newTitle) {
@@ -15,30 +14,25 @@ class Project {
         const projIndex = projects.indexOf(this);
         projects.splice(projIndex, 1);
     }
-    addTask(task) {
-        this.tasks.push(task);
-    }
-    deleteTask(task) {
-        const taskIndex = this.tasks.indexOf(task);
-        this.tasks.splice(taskIndex, 1);
-    }
 }
 
+// tasks
 class Task {
-    constructor (taskTitle, description, date, prio) {
+    constructor(taskTitle, taskDesc, prio, deadline) {
         this.taskTitle = taskTitle;
-        this.description = description;
-        this.date = date;
+        this.taskDesc = taskDesc;
         this.prio = prio;
+        this.deadline = deadline;
     }
-    editTask(newTaskTitle, newDes, newDate, newPrio) {
+    editTask(newTaskTitle, newTaskDesc, newPrio, newDeadline) {
         this.taskTitle = newTaskTitle;
-        this.description = newDes;
-        this.date = newDate;
+        this.taskDesc = newTaskDesc;
         this.prio = newPrio;
+        this.deadline = newDeadline;
     }
-
+    delete() {
+        // Deletion logic, but now you should be deleting from project-level tasks
+    }
 }
 
-
-export {projects, Project, Task,};
+export { projects, Project, Task };
